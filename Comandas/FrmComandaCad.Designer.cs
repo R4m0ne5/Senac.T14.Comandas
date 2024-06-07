@@ -37,7 +37,6 @@
             ClientSize = new Size(800, 450);
             Name = "FrmPrincipal";
             Text = "Form1";
-            Load += this.FrmPrincipal_Load;
             ResumeLayout(false);
         }
 

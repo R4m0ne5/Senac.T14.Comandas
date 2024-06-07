@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Comandas
 {
-    public partial class FrmCardapio : Form
+    public partial class FrmUsuarios : Form
     {
-        public FrmCardapio()
+        public FrmUsuarios()
         {
-
             InitializeComponent();
-        }
-
-        private void FrmCardapio_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

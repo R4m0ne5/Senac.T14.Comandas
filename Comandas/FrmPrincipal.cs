@@ -31,5 +31,35 @@ namespace Comandas
         {
 
         }
+
+        private void btnCardapio_DoubleClick(object sender, EventArgs e)
+        {
+            new FrmCardapio().ShowDialog();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCardapio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPedidoCozinha_DoubleClick(object sender, EventArgs e)
+        {
+            new FrmPedidoCozinha().ShowDialog();
+        }
+
+        private void btncomanda_DoubleClick(object sender, EventArgs e)
+        {
+            new FrmComanda().ShowDialog();
+        }
+
+        private void btnUsuarios_DoubleClick(object sender, EventArgs e)
+        {
+            new FrmUsuarios().ShowDialog();
+        }
     }
 }
