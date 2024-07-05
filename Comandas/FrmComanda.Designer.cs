@@ -28,12 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmComanda";
+            components = new System.ComponentModel.Container();
+            cyberController1 = new ReaLTaiizor.Child.Cyber.CyberController(components);
+            cyberController2 = new ReaLTaiizor.Child.Cyber.CyberController(components);
+            cyberController3 = new ReaLTaiizor.Child.Cyber.CyberController(components);
+            cyberController4 = new ReaLTaiizor.Child.Cyber.CyberController(components);
+            btnVoltar = new ReaLTaiizor.Controls.CyberButton();
+            SuspendLayout();
+            // 
+            // cyberController1
+            // 
+            cyberController1.Status = false;
+            cyberController1.TimerInterval = 300;
+            // 
+            // cyberController2
+            // 
+            cyberController2.Status = false;
+            cyberController2.TimerInterval = 300;
+            // 
+            // cyberController3
+            // 
+            cyberController3.Status = false;
+            cyberController3.TimerInterval = 300;
+            // 
+            // cyberController4
+            // 
+            cyberController4.Status = false;
+            cyberController4.TimerInterval = 300;
+            // 
+            // btnVoltar
+            // 
+            btnVoltar.Alpha = 20;
+            btnVoltar.BackColor = Color.Transparent;
+            btnVoltar.Background = true;
+            btnVoltar.Background_WidthPen = 4F;
+            btnVoltar.BackgroundPen = true;
+            btnVoltar.ColorBackground = Color.FromArgb(37, 52, 68);
+            btnVoltar.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnVoltar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnVoltar.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            btnVoltar.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnVoltar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnVoltar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnVoltar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnVoltar.Effect_1 = true;
+            btnVoltar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnVoltar.Effect_1_Transparency = 25;
+            btnVoltar.Effect_2 = true;
+            btnVoltar.Effect_2_ColorBackground = Color.White;
+            btnVoltar.Effect_2_Transparency = 20;
+            btnVoltar.Font = new Font("Arial", 11F);
+            btnVoltar.ForeColor = Color.FromArgb(245, 245, 245);
+            btnVoltar.Lighting = false;
+            btnVoltar.LinearGradient_Background = false;
+            btnVoltar.LinearGradientPen = false;
+            btnVoltar.Location = new Point(12, 363);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.PenWidth = 15;
+            btnVoltar.Rounding = true;
+            btnVoltar.RoundingInt = 70;
+            btnVoltar.Size = new Size(195, 75);
+            btnVoltar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnVoltar.TabIndex = 1;
+            btnVoltar.Tag = "Cyber";
+            btnVoltar.TextButton = "Voltar";
+            btnVoltar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnVoltar.Timer_Effect_1 = 5;
+            btnVoltar.Timer_RGB = 300;
+            btnVoltar.Click += btnVoltar_Click;
+            // 
+            // FrmComanda
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnVoltar);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FrmComanda";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Comanda";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ReaLTaiizor.Child.Cyber.CyberController cyberController1;
+        private ReaLTaiizor.Child.Cyber.CyberController cyberController2;
+        private ReaLTaiizor.Child.Cyber.CyberController cyberController3;
+        private ReaLTaiizor.Child.Cyber.CyberController cyberController4;
+        private ReaLTaiizor.Controls.CyberButton btnVoltar;
     }
 }
