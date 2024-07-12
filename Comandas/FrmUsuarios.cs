@@ -13,6 +13,8 @@ namespace Comandas
 {
     public partial class FrmUsuarios : Form
     {
+        private bool novo;
+
         public FrmUsuarios()
         {
             InitializeComponent();
@@ -20,31 +22,52 @@ namespace Comandas
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            /// metodo que vai inserir o usuario no banco
-            CriarUsuario();
+            if (novo) // usar chaves apenas quando é mais de uma linha
+                /// metodo que vai inserir o usuario no banco
+                CriarUsuario();
 
-            //AtualizarUsuario();
+            else 
+                //AtualizarUsuario();
+                AtualizarUsuario();
+        }
+        // Ctrl+K e Ctrl+D formatar certo!!
+        private void AtualizarUsuario()
+        {
+            using (var banco = new AppDbContext())
+            {
+                var usuario = banco
+                    .Usuarios
+                    .Where(e => e.Id == int.Parse(txtId.Text)).FirstOrDefault();
+                usuario.Nome = txtNome.Text;
+                usuario.Email = txtEmail.Text;
+                usuario.Senha = txtSenha.Text;
+                banco.SaveChanges();
+            }
         }
 
         private void CriarUsuario()
         {
             // acessar o banco
-            using(var banco = new AppDbContext())
+            using (var banco = new AppDbContext())
             {
                 // criar um novo usuario
                 var novoUsuario = new Usuario();
                 // atribuir propiedades
-                novoUsuario.Nome = "Ramon";
-                novoUsuario.Email = "nunesramon2007@gmail.com";
-                novoUsuario.Senha = "123";
+                novoUsuario.Nome = txtNome.TextButton;
+                novoUsuario.Email = txtEmail.TextButton;
+                novoUsuario.Senha = txtSenha.TextButton;
                 // salvar as alterações(INSERT INTO usuarios)
                 banco.Usuarios.Add(novoUsuario);
                 banco.SaveChanges();
                 MessageBox.Show("Usuário cadastrado com sucesso.");
             }
-            
 
 
+        }
+
+        private void BtnNovo_Click(object sender, EventArgs e)
+        {
+            novo = true;
         }
     }
 }
