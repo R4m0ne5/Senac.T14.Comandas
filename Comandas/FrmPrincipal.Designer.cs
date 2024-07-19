@@ -170,6 +170,7 @@
             Controls.Add(gpxPrincipal);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmComandaCad";
             TransparencyKey = Color.Fuchsia;
             Load += FrmPrincipal_Load;

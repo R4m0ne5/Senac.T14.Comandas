@@ -18,6 +18,18 @@ namespace Comandas
         public FrmUsuarios()
         {
             InitializeComponent();
+            ListarUsuarios();
+        }
+        // conectar no banco
+        private void ListarUsuarios()
+        {
+
+            using (var banco = new AppDbContext())
+            {   // SELECT * FROM usuarios
+                var usuarios = banco.Usuarios.ToList();
+                // Popular a tabela na tela DataGridView
+                dgvUsuarios.DataSource = usuarios;
+            }
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
@@ -26,10 +38,22 @@ namespace Comandas
                 /// metodo que vai inserir o usuario no banco
                 CriarUsuario();
 
-            else 
+            else
                 //AtualizarUsuario();
                 AtualizarUsuario();
+            DesabilitarCampos();
+            ListarUsuarios();
+            LimparCampos();
         }
+
+        private void LimparCampos()
+        {
+            txtId.TextButton = string.Empty;
+            txtNome.TextButton = string.Empty;  
+            txtEmail.TextButton = string.Empty;
+            txtSenha.TextButton = string.Empty;
+        }
+
         // Ctrl+K e Ctrl+D formatar certo!!
         private void AtualizarUsuario()
         {
@@ -68,6 +92,31 @@ namespace Comandas
         private void BtnNovo_Click(object sender, EventArgs e)
         {
             novo = true;
+            HabilitarCampos();
+        }
+
+        private void HabilitarCampos()
+        {
+            txtNome.Enabled = true;
+            txtEmail.Enabled = true;
+            txtSenha.Enabled = true;
+        }
+
+        private void DesabilitarCampos()
+        {
+            txtNome.Enabled = false;
+            txtEmail.Enabled = false;
+            txtSenha.Enabled = false;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {   // indiaca que esta editando o usuario
+            novo = false;
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
     }
 }
