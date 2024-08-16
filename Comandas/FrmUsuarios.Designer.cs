@@ -109,6 +109,7 @@
             BtnExcluir.Effect_2 = true;
             BtnExcluir.Effect_2_ColorBackground = Color.White;
             BtnExcluir.Effect_2_Transparency = 20;
+            BtnExcluir.Enabled = false;
             BtnExcluir.Font = new Font("Arial", 11F);
             BtnExcluir.ForeColor = Color.FromArgb(245, 245, 245);
             BtnExcluir.Lighting = false;
@@ -150,6 +151,7 @@
             BtnSalvar.Effect_2 = true;
             BtnSalvar.Effect_2_ColorBackground = Color.White;
             BtnSalvar.Effect_2_Transparency = 20;
+            BtnSalvar.Enabled = false;
             BtnSalvar.Font = new Font("Arial", 11F);
             BtnSalvar.ForeColor = Color.FromArgb(245, 245, 245);
             BtnSalvar.Lighting = false;
@@ -232,6 +234,7 @@
             BtnCancelar.Effect_2 = true;
             BtnCancelar.Effect_2_ColorBackground = Color.White;
             BtnCancelar.Effect_2_Transparency = 20;
+            BtnCancelar.Enabled = false;
             BtnCancelar.Font = new Font("Arial", 11F);
             BtnCancelar.ForeColor = Color.FromArgb(245, 245, 245);
             BtnCancelar.Lighting = false;
@@ -250,6 +253,7 @@
             BtnCancelar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BtnCancelar.Timer_Effect_1 = 5;
             BtnCancelar.Timer_RGB = 300;
+            BtnCancelar.Click += BtnCancelar_Click;
             // 
             // cyberGroupBox1
             // 
@@ -284,7 +288,7 @@
             cyberGroupBox1.RGB = false;
             cyberGroupBox1.Rounding = true;
             cyberGroupBox1.RoundingInt = 60;
-            cyberGroupBox1.Size = new Size(821, 298);
+            cyberGroupBox1.Size = new Size(821, 306);
             cyberGroupBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             cyberGroupBox1.TabIndex = 5;
             cyberGroupBox1.Tag = "Cyber";
@@ -471,6 +475,7 @@
             dgvUsuarios.RowHeadersWidth = 62;
             dgvUsuarios.Size = new Size(808, 194);
             dgvUsuarios.TabIndex = 6;
+            dgvUsuarios.CellClick += dgvUsuarios_CellClick;
             // 
             // btnEditar
             // 
@@ -493,6 +498,7 @@
             btnEditar.Effect_2 = true;
             btnEditar.Effect_2_ColorBackground = Color.White;
             btnEditar.Effect_2_Transparency = 20;
+            btnEditar.Enabled = false;
             btnEditar.Font = new Font("Arial", 11F);
             btnEditar.ForeColor = Color.FromArgb(245, 245, 245);
             btnEditar.Lighting = false;
@@ -530,6 +536,7 @@
             Name = "FrmUsuarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Usuários";
+            Load += FrmUsuarios_Load;
             cyberGroupBox1.ResumeLayout(false);
             cyberGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
